@@ -72,5 +72,15 @@ namespace HairSalon.Tests
             Client secondClient = new Client("brenda", 1);
             Assert.AreEqual(firstClient, secondClient);
         }
+
+        [TestMethod]
+        public void Save_SavesToDatabase_ClientList()
+        {
+            Client testClient = new Client("brenda", 1);
+            testClient.Save();
+            List<Client> result = Client.GetAll();
+            List<Client> testList = new List<Client> { testClient };
+            CollectionAssert.AreEqual(testList, result);
+        }
     }
 }
