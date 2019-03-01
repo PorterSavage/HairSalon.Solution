@@ -33,5 +33,13 @@ namespace HairSalon.Tests
             string result = newClient.GetName();
             Assert.AreEqual(name, result);
         }
+
+        [TestMethod]
+        public void GetAll_ReturnsEmptyList_ClientList()
+        {
+            List<Client> newList = new List<Client> {};
+            List<Client> result = Client.GetAll();
+            CollectionAssert.AreEqual(newList, result);
+        }
     }
 }
