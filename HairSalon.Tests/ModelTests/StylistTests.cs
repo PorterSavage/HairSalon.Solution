@@ -90,6 +90,15 @@ namespace HairSalon.Tests
             Stylist secondStylist = new Stylist("brenda");
             Assert.AreEqual(firstStylist, secondStylist);
         }
-       
+
+        [TestMethod]
+        public void Save_SavesStylistToDatabase_StylistList()
+        {
+            Stylist testStylist = new Stylist("brenda");
+            testStylist.Save();
+            List<Stylist> result = Stylist.GetAll();
+            List<Stylist> testList = new List<Stylist> { testStylist };
+            CollectionAssert.AreEqual(testList, result);
+        }
     }
 }
