@@ -13,5 +13,11 @@ namespace HairSalon.Controllers
             List<Stylist> allStylists = Stylist.GetAll();
             return View(allStylists);
         }
+
+        [HttpGet("/stylists/new")]
+        public ActionResult New()
+        {
+            return View();
+        }
     }
 }
