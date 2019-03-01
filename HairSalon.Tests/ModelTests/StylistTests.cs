@@ -119,7 +119,7 @@ namespace HairSalon.Tests
             testStylist.Save();
             Client firstClient = new Client("susan", testStylist.GetId());
             firstClient.Save();
-            Client secondClient = new Client("dave" testStylist.GetId());
+            Client secondClient = new Client("dave", testStylist.GetId());
             secondClient.Save();
             List<Client> testClientList = new List<Client> { firstClient, secondClient };
             List<Client> resultClientList = testStylist.GetClients();
