@@ -78,5 +78,20 @@ namespace HairSalon.Models
                 conn.Dispose();
             }
         }
+
+        public override bool Equals(System.Object otherStylist)
+        {
+            if (!(otherStylist is Stylist))
+            {
+                return false;
+            }
+            else
+            {
+                Stylist newStylist = (Stylist)otherStylist;
+                boll idEqulity = this.GetId().Equals(newCategory.GetId());
+                bool nameEquality = this.GetName().Equals(newCategory.GetName());
+                return (idEqulity && nameEquality);
+            }
+        }
     }
 }
