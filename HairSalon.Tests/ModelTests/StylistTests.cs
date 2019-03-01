@@ -54,7 +54,7 @@ namespace HairSalon.Tests
             newStylist2.Save();
             List<Stylist> newList = new List<Stylist> { newStylist1, newStylist2 };
             List<Stylist> result = Stylist.GetAll();
-            CollectionAssert.AreEqual(newList, result);    
+            CollectionAssert.AreEqual(newList, result);     
         }
     }
 }
