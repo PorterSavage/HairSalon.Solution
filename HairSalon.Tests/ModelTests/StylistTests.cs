@@ -62,7 +62,7 @@ namespace HairSalon.Tests
         {
             Stylist testStylist = new Stylist("List of Clients");
             testStylist.Save();
-            Stylist foundStylist = Stylist.Find(testCategory.GetId());
+            Stylist foundStylist = Stylist.Find(testStylist.GetId());
             Assert.AreEqual(testStylist, foundStylist);
         }
     }
