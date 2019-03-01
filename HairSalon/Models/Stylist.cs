@@ -88,8 +88,8 @@ namespace HairSalon.Models
             else
             {
                 Stylist newStylist = (Stylist)otherStylist;
-                boll idEqulity = this.GetId().Equals(newCategory.GetId());
-                bool nameEquality = this.GetName().Equals(newCategory.GetName());
+                bool idEqulity = this.GetId().Equals(newStylist.GetId());
+                bool nameEquality = this.GetName().Equals(newStylist.GetName());
                 return (idEqulity && nameEquality);
             }
         }
