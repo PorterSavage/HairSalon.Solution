@@ -75,5 +75,12 @@ namespace HairSalon.Tests
             List<Client> result = newStylist.GetClients();
             CollectionAssert.AreEqual(newList, result);
         }
+
+        [TestMethod]
+        public void GetAll_StylistsEmptyAtFirst_List()
+        {
+            int result = Stylist.GetAll().Count;
+            Assert.AreEqual(0, result);
+        }
     }
 }
