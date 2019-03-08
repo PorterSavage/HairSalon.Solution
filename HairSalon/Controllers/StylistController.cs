@@ -52,7 +52,7 @@ namespace HairSalon.Controllers
             return View("Show", model);
         }
 
-        [HttpGet("/stylists/{stylistId}/delete")]
+        [HttpPost("/stylists/{stylistId}/delete")]
         public ActionResult Delete(int stylistId)
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
@@ -62,12 +62,19 @@ namespace HairSalon.Controllers
             return View(model);
         }
 
-        [HttpPost("/stylists/delete")]
-        public ActionResult DeleteList(int stylistId)
+        [HttpGet("/stylists/delete")]
+        public ActionResult DeleteStylist(int stylistId)
         {
             Stylist stylist = Stylist.Find(stylistId);
             stylist.Delete();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet("/stylists/deleteAll")]
+        public ActionResult DeleteAll()
+        {
+            Stylist.ClearAll();
+            return View();
         }
     }
 }
