@@ -40,22 +40,23 @@ namespace HairSalon.Controllers
             return View(model);
         }
 
-        [HttpPost("/stylists/{stylistId}/clients/{clientId}/delete")]
+        [HttpPost("/stylists/{stylistId}/clients/{clientId}/deleted")]
+        public ActionResult DeleteClient(int stylistId, int clientId)
+        {
+            Stylist stylist = Stylist.Find(stylistId);
+            Client client = Client.Find(clientId);
+            client.Delete();
+            return View("Delete");
+        }
+
+        [HttpGet("/stylist/{stylistId}/clients/{clientId}/delete")]
         public ActionResult Delete(int stylistId, int clientId)
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
+            Stylist stylist = Stylist.Find(stylistId);
             Client client = Client.Find(clientId);
             client.Delete();
-            model.Add("client", client);
             return View(model);
-        }
-
-        [HttpGet("/clients/delete")]
-        public ActionResult DeleteClient(int clientId)
-        {
-            Client client = Client.Find(clientId);
-            client.Delete();
-            return RedirectToAction("Index");
         }
         
         [HttpGet("/clients/deleteAll")]

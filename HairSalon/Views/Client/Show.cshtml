@@ -8,6 +8,6 @@
 <br>
 <a href='/stylists'>View all stylists</a>
 <br>
-<form action='/clients/@Model["client"].GetId()/delete' method='post'>
+<form action='/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()/deleted' method='post'>
   <button type="submit">Click here to delete this client.</button>
 </form>
