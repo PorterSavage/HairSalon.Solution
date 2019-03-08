@@ -7,3 +7,7 @@
 <a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add another client</a>
 <br>
 <a href='/stylists'>View all stylists</a>
+<br>
+<form action='/clients/@Model["client"].GetId()/delete' method='post'>
+  <button type="submit">Click here to delete this client.</button>
+</form>
