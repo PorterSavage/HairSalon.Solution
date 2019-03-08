@@ -148,5 +148,21 @@ namespace HairSalon.Models
             }
             return allStylistClients;
         }
+
+        public void Delete()
+        {
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM stylists where id = @StylistId; DELETE FROM stylists_specialties WHERE stylist_id = @StylistId;", conn);
+            MySqlParameter stylistId = new MySqlParameter();
+            stylistId.ParameterName = "@StylistId";
+            stylistId.Value = this.GetId();
+            cmd.Parameters.Add(stylistId);
+            cmd.ExecuteNonQuery();
+            if (conn != null)
+            {
+                conn.Close();
+            }
+        }
     }
 }
