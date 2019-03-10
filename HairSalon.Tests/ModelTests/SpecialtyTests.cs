@@ -18,10 +18,30 @@ namespace HairSalon.Tests
         }
 
         [TestMethod]
-        public void SpecialtyConstructer_CreatesInstance_Specialty()
+        public void SpecialtyConstructer_CreatesInstanceOfClass_Specialty()
         {
             Specialty newSpecialty = new Specialty("buzz head", 0);
             Assert.AreEqual(typeof(Specialty), newSpecialty.GetType());
         }
-     }
+
+        [TestMethod]
+        public void GetSpecialty_ReturnsSpecialtyName_String()
+        {
+            string specialty = "shave";
+            int id = 0;
+            Specialty newSpecialty = new Specialty(specialty, id);
+            string result = newSpecialty.GetSpecialty();
+            Assert.AreEqual(specialty, result);
+        }
+
+        [TestMethod]
+        public void Save_SaveSpecialtyToDatabase_SpecialtyList()
+        {
+            Specialty testSpecialty = new Specialty("dying hair");
+            testSpecialty.Save();
+            List<Specialty> result = Specialty.GetAll();
+            List<Specialty> testList = new List<Specialty> { testSpecialty };
+            CollectionAssert.AreEqual(testList, result);
+        }
+    }
 }
