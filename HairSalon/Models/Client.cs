@@ -154,7 +154,7 @@ namespace HairSalon.Models
             }
         }
 
-        public void Edit(string newClientName)
+        public void Edit(string newName)
         {
             MySqlConnection conn = DB.Connection();
             conn.Open();
@@ -166,10 +166,10 @@ namespace HairSalon.Models
             cmd.Parameters.Add(searchId);
             MySqlParameter name = new MySqlParameter();
             name.ParameterName = "@newName";
-            name.Value = newClientName;
+            name.Value = newName;
             cmd.Parameters.Add(name);
             cmd.ExecuteNonQuery();
-            _name = newClientName;
+            _name = newName;
             conn.Close();
             if (conn != null)
             {
