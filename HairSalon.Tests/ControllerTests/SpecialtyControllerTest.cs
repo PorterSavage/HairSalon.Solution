@@ -40,5 +40,14 @@ namespace HairSalon.Tests
             ActionResult newView = controller.Show(0);
             Assert.IsInstanceOfType(newView, typeof(ViewResult));
         }
+
+        [TestMethod]
+        public void AddStylist_ReturnRedirectToCorrectAction_Show()
+        {
+            SpecialtyController controller = new SpecialtyController();
+            RedirectToActionResult newView = controller.AddStylist(1, 1) as RedirectToActionResult;
+            string result = newView.ActionName;
+            Assert.AreEqual("Show", result);
+        }
     }
 }
