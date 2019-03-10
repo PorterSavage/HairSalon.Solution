@@ -2,13 +2,20 @@
 ## By Porter Savage
 
 ## Description
-This is A Webpage that allows the user to see a list of current available stylists, if there are none then the user can add a stylist to the list, also the user can add clients for that specific stylist in a stylist/client one to many relationship.
+This is A Webpage that allows the user to see a list of stylists, and add a stylist to that list. The user can also add to a list of clients or add a specific client to a specific stylist. Other options include, editing stylist and client names, and deleting the entire list of stylist or clients or just deleting a singular stylist or client.
 
 ## Specifications
-* Can add new Stylists
-* Able to view all the stylists that have been added
-* Can add new Clients to an already added stylist
-* User will be able to select a stylist and see the clients that are attached to that stylist
+* Can add new Stylists.
+* Able to view all the stylists that have been added.
+* Can add new Clients to an already added stylist.
+* Can see entire list of clients.
+* user can select a client and see all stylists attached to that client.
+* User will be able to select a stylist and see the clients that are attached to that stylist.
+* User can add a specialty to a list of specialties.
+* User can attach a specialty to a specific stylist.
+* User can add a stylist to a specific specialty.
+* User can delete stylists and specialties.
+* User can edit Stylist and specialty names.
 
 ## Setup Instructions
 * Download and Install .NET Core version 1.1.4 SDK, .NET core Runtime version 1.1.2, and MAMP.
